@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=key
+comment0.target=java.lang.String\ alphabetic(int)
+comment1.params=
+comment1.target=void\ print()
+comment2.params=origin\ key1\ key2
+comment2.target=java.lang.String\ Caezar(java.lang.String,\ int,\ int)
+comment3.params=ch
+comment3.target=boolean\ isLowerCase(java.lang.Character)
+comment4.params=num
+comment4.target=boolean\ isEven(int)
+numComments=5

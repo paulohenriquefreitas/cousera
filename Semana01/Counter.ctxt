@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=void\ counterWords(java.lang.String)
+comment1.params=alpha\ counts
+comment1.target=void\ print(java.lang.String,\ int[])
+numComments=2
