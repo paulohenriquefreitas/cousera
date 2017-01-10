@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CharactersInPlay()
+comment1.params=name
+comment1.target=void\ update(java.lang.String)
+comment2.params=
+comment2.target=void\ findAllCharacters()
+numComments=3
