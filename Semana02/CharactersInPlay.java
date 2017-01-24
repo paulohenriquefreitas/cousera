@@ -17,9 +17,33 @@ public class CharactersInPlay{
     }
     
     public void update (String name){
+         int index = names.indexOf(name);
+            if (index == -1){
+                names.add(name);
+                counts.add(1);
+            }else{
+                counts.set(index,counts.get(index) + 1);
+            }
     }
     
     public void findAllCharacters(){
+        FileResource resource = new FileResource();
+        for(String word : resource.words()){
+            for(int k=0; k<word.length(); k++){
+                if(word.charAt(k) == '.' && Character.isUpperCase(word.charAt(k-1)) && word.length() > 3){
+                    update(word);
+                }
+            }
+        }
         
+    }
+    
+    public void tester(){
+        names.clear();
+        counts.clear();
+        findAllCharacters();
+        for(int k=0; k<names.size(); k++){
+            System.out.println(names.get(k) + " \t " + counts.get(k)); 
+        }
     }
 }

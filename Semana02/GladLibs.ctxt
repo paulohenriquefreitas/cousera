@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=w
+comment0.target=java.lang.String\ processWord(java.lang.String)
+comment1.params=label
+comment1.target=java.lang.String\ getSubstitute(java.lang.String)
+comment2.params=list
+comment2.target=java.lang.String\ randomFrom(java.util.ArrayList)
+comment3.params=message\ lineWidth
+comment3.target=void\ printout(java.lang.String,\ int)
+numComments=4

@@ -24,7 +24,7 @@ public class WordsLengths {
     }
         
     public void testCountWordLengths(){
-        FileResource resource = new FileResource("/tmp/lotsOfWords.txt");
+        FileResource resource = new FileResource("/tmp/errors.txt");
         int[] counts = new int[31];
         countWordLengths(resource,counts);
         
