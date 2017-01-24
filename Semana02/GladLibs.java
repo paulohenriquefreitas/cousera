@@ -7,6 +7,7 @@
  */
 
 import java.util.*;
+import edu.duke.*;
 public class GladLibs{
     
    private ArrayList<String> adjectiveList; 
@@ -16,7 +17,8 @@ public class GladLibs{
    private ArrayList<String> nameList;
    private ArrayList<String> animalList;
    private ArrayList<String> timeList;
-   private Random myRandom;
+   private Random myRandom = new Random();
+   private String source = "/home/paulo.freitas/Cursos/cousera/Semana02";
    
    private String processWord(String w){
        int first = w.indexOf("<");
@@ -25,11 +27,11 @@ public class GladLibs{
            return w;
         }
         
-        return "";
+        return getSubstitute(w.substring(first+1,last));
    }
    
    private String getSubstitute(String label){
-       if(label.equals("adjective")){
+           if(label.equals("adjective")){
            return randomFrom(adjectiveList);
         }
        if(label.equals("noum")){
@@ -56,18 +58,17 @@ public class GladLibs{
     }
     
     private void initializaFromSource(String source){
-           adjectiveList = readIt(source+"/adjective.txt");
-       noumList = readIt(source+"/noum.txt");
-       colorList = readIt(source+"/color.txt");
-       countryList = readIt(source+"/country.txt");
-       nameList = readIt(source+"/name.txt");
-       animalList = readIt(source+"/animal.txt");
-       timeList = readIt(source+"/time.txt");
+       adjectiveList = readIt(source+"/adjective.txt");
+      
     }
     
     public void makeStory(){
-        String template = fromTemplate(dataSourceDirectroy+"/madTemplate.txt");
-        printout(template,60)
+        initializaFromSource(source);
+        String template = source+"/madtemplate.txt";
+        FileResource resource = new FileResource(template);
+       for(String word : resource.words()){
+            System.out.println(processWord(word));
+        }
     }
     
     private String randomFrom(ArrayList<String> source){
@@ -76,10 +77,17 @@ public class GladLibs{
     }
    
    private void printout(String message, int lineWidth){
-       int charsWritten = 0;
+       System.out.println(message);
     }
     
-   private readIt(String source){
+   private ArrayList<String> readIt(String source){
        ArrayList<String> list = new ArrayList<String>();
+        FileResource resource = new FileResource(source);
+       for(String word : resource.words()){
+            list.add(word);
+        }
+       return list;
     }
+    
+  
 }

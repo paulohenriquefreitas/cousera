@@ -1,0 +1,4 @@
+bonito
+feio
+bom
+ruim
