@@ -11,14 +11,16 @@ import edu.duke.*;
 public class GladLibs{
     
    private ArrayList<String> adjectiveList; 
-   private ArrayList<String> noumList;
    private ArrayList<String> colorList;   
    private ArrayList<String> countryList;
    private ArrayList<String> nameList;
    private ArrayList<String> animalList;
    private ArrayList<String> timeList;
+    private ArrayList<String> timeLineList;
+   private ArrayList<String> verbList;
+   private ArrayList<String> numberList;
    private Random myRandom = new Random();
-   private String source = "/home/paulo.freitas/Cursos/cousera/Semana02";
+   private String source = "/home/paulo/Cursos/Coursera/cousera/Semana02";
    
    private String processWord(String w){
        int first = w.indexOf("<");
@@ -33,10 +35,7 @@ public class GladLibs{
    private String getSubstitute(String label){
            if(label.equals("adjective")){
            return randomFrom(adjectiveList);
-        }
-       if(label.equals("noum")){
-           return randomFrom(noumList);
-        }
+        }      
        if(label.equals("color")){
            return randomFrom(colorList);
         } 
@@ -44,7 +43,7 @@ public class GladLibs{
            return randomFrom(countryList);
         }
        if(label.equals("name")){
-           return randomFrom(adjectiveList);
+           return randomFrom(nameList);
         }
        if(label.equals("animal")){
            return randomFrom(animalList);
@@ -52,14 +51,30 @@ public class GladLibs{
        if(label.equals("time")){
            return randomFrom(timeList);
         } 
+        if(label.equals("verb")){
+           return randomFrom(verbList);
+        }
+        if(label.equals("number")){
+           return randomFrom(numberList);
+        }
+        if(label.equals("timeline")){
+           return randomFrom(timeLineList);
+        }
        else {
            return "UNKNOWN";
         }
     }
     
     private void initializaFromSource(String source){
-       adjectiveList = readIt(source+"/adjective.txt");
-      
+       adjectiveList = readIt(source+"/adjective.txt");      
+       colorList = readIt(source+"/color.txt");
+       countryList = readIt(source+"/country.txt");
+       nameList = readIt(source+"/name.txt");
+       animalList = readIt(source+"/animal.txt");
+       timeList = readIt(source+"/time.txt");
+       verbList = readIt(source+"/verb.txt");
+       numberList = readIt(source+"/number.txt");
+       timeLineList = readIt(source+"/timeline.txt");
     }
     
     public void makeStory(){
@@ -67,7 +82,7 @@ public class GladLibs{
         String template = source+"/madtemplate.txt";
         FileResource resource = new FileResource(template);
        for(String word : resource.words()){
-            System.out.println(processWord(word));
+            System.out.print(processWord(word) + " ");
         }
     }
     

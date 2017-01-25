@@ -1,4 +1,4 @@
-bonito
-feio
-bom
-ruim
+beautiful
+ugly
+good
+bad
