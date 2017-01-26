@@ -20,6 +20,7 @@ public class GladLibs{
    private ArrayList<String> verbList;
    private ArrayList<String> numberList;
    private Random myRandom = new Random();
+   //private String source = "/home/paulo/Cursos/Coursera/cousera/Semana02";
    private String source = "/home/paulo/Cursos/Coursera/cousera/Semana02";
    
    private String processWord(String w){
