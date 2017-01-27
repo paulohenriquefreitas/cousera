@@ -10,8 +10,8 @@ import edu.duke.*;
 public class CodonCount{
     
     private HashMap<String, Integer> dnaMap;
-//    private String source = "/home/paulo/Cursos/Coursera/cousera/Semana02";
-    private String source = "/home/paulo.freitas/Cursos/cousera/Semana02";
+   private String source = "/home/paulo/Cursos/Coursera/cousera/Semana02";
+//    private String source = "/home/paulo.freitas/Cursos/cousera/Semana02";
     
     public CodonCount(){
         dnaMap = new HashMap<String, Integer>();
@@ -62,7 +62,7 @@ public class CodonCount{
     }
     
     public void testDna(int start){
-        String template = source+"/ILikeIt.txt";
+        String template = source+"/smalldna.txt";
         FileResource resource = new FileResource(template);
         for(String word : resource.words()){
             buildCodonMap(start,word.toUpperCase().trim());
